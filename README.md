@@ -1,4 +1,4 @@
-# LDFx
+# ToXic's Plugin
 A simple Plugin.
 # Free Version
 - [ ] NickName Support
@@ -14,3 +14,4 @@ This command does not work any help because i dont know whats wrong with the cod
 Donate to me by sending money to my paypal:
 -
 Goal: 0/10 dollars
+Toxic#6969
