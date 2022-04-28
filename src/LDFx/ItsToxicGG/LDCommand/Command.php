@@ -7,7 +7,7 @@ use pocketmine\command\Command;
 // LDFx
 use LDFx\ItsToxicGG\LDForm\Form;
 
-class Command extends Command{
+class Command extends CommandSender{
   
  public function __construct(Form $form){
    $this->form = $form;
