@@ -26,6 +26,25 @@ class Command extends CommandSender{
          $sender->sendMessage("You don't have permission to use this command");
        }
      break;
+       
+     case "fly":
+       if($sender->hasPermission("settings.cmd")){
+         if(!$sender instanceof Player){
+           $sender->sendMessage("This Command Only Works for players! Please perform this command IN GAME!");
+         }else{
+           $sender->setFlying(true);
+           $sender->setAllowFlight(true);
+           $sender->sendMessage("§aFly Is Active");
+         }else{
+           $sender->setFlying(false);
+           $sender->setAllowFlight(false);
+           $sender->sendMessage("§cFly is Not Active"); 
+       }else{
+         $sender->sendMessage("You don't have permission to use this command");
+       }
+     break;
+   
   }
   return true;
+ }
 }
