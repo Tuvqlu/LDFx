@@ -3,9 +3,9 @@
 namespace LDFx\ItsToxicGG;
 
 // LDFX
-use LDFx\LDForm\Form;
-use LDFx\LDCommand\Command;
-use LDFx\EventListener;
+use LDFx\ItsToxicGG\LDForm\Form;
+use LDFx\ItsToxicGG\LDCommand\Command;
+use LDFx\ItsToxicGG\EventListener;
 // POCKETMINE
 use pocketmine\plugin\PluginBase;
 use pocketmine\player\Player;
