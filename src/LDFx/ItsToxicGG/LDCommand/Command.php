@@ -35,10 +35,6 @@ class Command extends CommandSender{
            $sender->setFlying(true);
            $sender->setAllowFlight(true);
            $sender->sendMessage("§aFly Is Active");
-         }else{
-           $sender->setFlying(false);
-           $sender->setAllowFlight(false);
-           $sender->sendMessage("§cFly is Not Active"); 
        }else{
          $sender->sendMessage("You don't have permission to use this command");
        }
