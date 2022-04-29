@@ -73,7 +73,7 @@ class LDFx extends PluginBase
       });
       $form->setTitle("§aFly§cSettings");
       $form->addLabel("§fChoose if you want fly to be off or on");
-      $form->addToggle("§fFly", false);
+      $form->addToggle("§fFly", true);
       $form->sendToPlayer($player);
       return $form;
   }
