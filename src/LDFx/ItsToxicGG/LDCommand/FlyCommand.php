@@ -43,4 +43,3 @@ class FlyCommand extends Command implements PluginOwned{
         return $this->plugin;
     }
 }
-}
