@@ -10,14 +10,14 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\PluginOwned;
 
-use LDFx\ItsToxicGG\LDForm\Form;
+use LDFx\ItsToxicGG\LDFx;
 
 class FlyCommand extends Command implements PluginOwned{
     
-    private $form;
+    private $plugin;
 
-    public function __construct(Form $form){
-        $this->form = $form;
+    public function __construct(LDFx $plugin){
+        $this->plugin = $plugin;
         
         parent::__construct("fly", "§r§fYour Fly Settings, Plugin By ItsToxicGG", "§cUse: /fly", ["flyui"]);
         $this->setPermission("fly.fx");
@@ -27,11 +27,20 @@ class FlyCommand extends Command implements PluginOwned{
     public function execute(CommandSender $sender, string $commandLabel, array $args){
         if(count($args) == 0){
             if($sender instanceof Player) {
-                $this->form->FlyForm($sender);
+                $this->plugin->FlyForm($sender);
             } else {
                 $sender->sendMessage("Use this command in-game");
             }
         }
         return true;
     }
+    
+    public function getPlugin(): Plugin{
+        return $this->plugin;
+    }
+
+    public function getOwningPlugin(): LDFx{
+        return $this->plugin;
+    }
+}
 }
