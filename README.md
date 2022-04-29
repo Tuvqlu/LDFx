@@ -10,9 +10,13 @@ ive tested myself!
 - [X] Commands Support
 - [X] Permissions Support
 - [X] FormAPI Support
+- [ ] Pay-Pal Link
 # Help
 This command does not work any help because i dont know whats wrong with the code.
 # Support
 Donate to me by sending money to my paypal:
-- Link is coming soon
+
+- Link is coming soon!
 Goal: 0/10 dollars
+
+If we reach the goal I will add epic new features!
