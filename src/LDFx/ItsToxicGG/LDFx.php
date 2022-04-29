@@ -5,6 +5,7 @@ namespace LDFx\ItsToxicGG;
 // LDFX
 use LDFx\ItsToxicGG\LDCommand\SettingsCommand;
 use LDFx\ItsToxicGG\LDCommand\FlyCommand;
+use LDFx\ItsToxicGG\LDCommand\NickColorCommand;
 use LDFx\ItsToxicGG\EventListener;
 // POCKETMINE
 use pocketmine\plugin\PluginBase;
@@ -21,6 +22,7 @@ class LDFx extends PluginBase
       $this->getLogger()->info("§aEnabled LDFx");
       $this->getServer()->getCommandMap()->register("settings", new SettingsCommand($this));
       $this->getServer()->getCommandMap()->register("fly", new FlyCommand($this));
+      $this->getServer()->getCommandMap()->register("nickcolor", new NickColorCommand($this));
   }
   
   public function onDiable(): void{
