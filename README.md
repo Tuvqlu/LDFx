@@ -1,18 +1,16 @@
 # LDFx
 A simple Plugin.
-# No Bugs
-The Plugin works fine just dont mind the fact that it says it has a problem
-ive tested myself!
-# Free Version
+# Does this work?
+Ive tested myself and the commands + permissions are working good!
+# Todo && Implemented
 - [ ] NickName Support
 - [X] Fly-Support
 - [ ] Chat-Color Support
+- [ ] LevelSystem Support
 - [X] Commands Support
 - [X] Permissions Support
 - [X] FormAPI Support
 - [ ] Pay-Pal Link
-# Help
-This command does not work any help because i dont know whats wrong with the code.
 # Support
 Donate to me by sending money to my paypal:
 
