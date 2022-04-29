@@ -14,5 +14,5 @@ ive tested myself!
 This command does not work any help because i dont know whats wrong with the code.
 # Support
 Donate to me by sending money to my paypal:
-- Link is comming soon
+- Link is coming soon
 Goal: 0/10 dollars
