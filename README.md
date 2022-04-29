@@ -3,7 +3,7 @@ A simple Plugin.
 # Does this work?
 Ive tested myself and the commands + permissions are working good!
 # Todo && Implemented
-- [ ] NickName Support
+- [X] NickName Support
 - [X] Fly-Support
 - [ ] Chat-Color Support
 - [ ] LevelSystem Support
