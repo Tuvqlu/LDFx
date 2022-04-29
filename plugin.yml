@@ -11,6 +11,6 @@ permissions:
   fly.fx:
     description: /fly
     default: op   
-  nickcolors.fx:
+  nickcolor.fx:
     description: /nickcolor
     default: op
