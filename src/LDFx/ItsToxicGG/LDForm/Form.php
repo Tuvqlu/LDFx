@@ -3,8 +3,8 @@
 namespace LDFx\ItsToxicGG\LDForm;
 
 use pocketmine\player\Player;
-use jojoe7777\FormAPI\SimpleForm;
-use jojoe7777\FormAPI\CustomForm;
+use Vecnavium\FormsUI\SimpleForm;
+use Vecnavium\FormsUI\CustomForm;
 
 class Form extends Form{
   
