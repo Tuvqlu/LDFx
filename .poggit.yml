@@ -5,4 +5,6 @@ branches:
 projects:
   LDFx:
     path: ""
+    lint:
+      phpstan: false 
 ...
