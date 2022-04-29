@@ -8,3 +8,6 @@ permissions:
   settings.fx:
     description: /settings 
     default: op
+  fly.fx:
+    description: /fly
+    default: op   
