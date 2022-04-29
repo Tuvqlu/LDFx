@@ -43,4 +43,3 @@ class SettingsCommand extends Command implements PluginOwned{
         return $this->plugin;
     }
 }
-}
