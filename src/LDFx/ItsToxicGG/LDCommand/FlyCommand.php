@@ -12,7 +12,7 @@ use pocketmine\plugin\PluginOwned;
 
 use LDFx\ItsToxicGG\LDForm\Form;
 
-class SettingsCommand extends Command implements PluginOwned{
+class FlyCommand extends Command implements PluginOwned{
     
     private $plugin;
     public $author = 'ItsToxicGG';
