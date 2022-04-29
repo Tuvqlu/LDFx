@@ -19,7 +19,7 @@ class SettingsCommand extends Command implements PluginOwned{
     public function __construct(Form $form){
         $this->form = $form;
         
-        parent::__construct("settingsui", "§r§fYour Settings, Plugin By $author", "§cUse: /settings", ["settings"]);
+        parent::__construct("settingsui", "§r§fYour Settings, Plugin By ItsToxicGG", "§cUse: /settings", ["settings"]);
         $this->setPermission("settings.fx");
         $this->setAliases(["settings"]);
     }
