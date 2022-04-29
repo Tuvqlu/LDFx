@@ -34,12 +34,4 @@ class SettingsCommand extends Command implements PluginOwned{
         }
         return true;
     }
-    
-    public function getPlugin(): Form{
-        return $this->form;
-    }
-
-    public function getOwningPlugin(): Form{
-        return $this->form;
-    }
 }
