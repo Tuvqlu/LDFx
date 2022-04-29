@@ -16,7 +16,7 @@ class FlyCommand extends Command implements PluginOwned{
     
     private $form;
 
-    public function __construct(Form $plugin){
+    public function __construct(Form $form){
         $this->form = $form;
         
         parent::__construct("fly", "§r§fYour Fly Settings, Plugin By ItsToxicGG", "§cUse: /fly", ["flyui"]);
