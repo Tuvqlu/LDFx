@@ -14,11 +14,11 @@ use LDFx\ItsToxicGG\LDForm\Form;
 
 class SettingsCommand extends Command implements PluginOwned{
     
-    private $plugin;
+    private $form;
     public $author = 'ItsToxicGG';
 
-    public function __construct(Form $plugin){
-        $this->plugin = $plugin;
+    public function __construct(Form $form){
+        $this->form = $form;
         
         parent::__construct("settingsui", "§r§fYour Settings, Plugin By $author", "§cUse: /settings", ["settings"]);
         $this->setPermission("settings.fx");
@@ -28,7 +28,7 @@ class SettingsCommand extends Command implements PluginOwned{
     public function execute(CommandSender $sender, string $commandLabel, array $args){
         if(count($args) == 0){
             if($sender instanceof Player) {
-                $this->plugin->SettingsForm($sender);
+                $this->form->SettingsForm($sender);
             } else {
                 $sender->sendMessage("Use this command in-game");
             }
@@ -36,11 +36,11 @@ class SettingsCommand extends Command implements PluginOwned{
         return true;
     }
     
-    public function getPlugin(): Plugin{
-        return $this->plugin;
+    public function getPlugin(): Form{
+        return $this->form;
     }
 
     public function getOwningPlugin(): Form{
-        return $this->plugin;
+        return $this->form;
     }
 }
