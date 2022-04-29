@@ -77,5 +77,68 @@ class LDFx extends PluginBase
       $form->sendToPlayer($player);
       return $form;
   }
+  
+  public function NickColorForm(Player $player){
+		  $form = new SimpleForm(function (Player $player, $data = null){
+			    if($data === null){
+		          return true;
+	        }
+		      switch($data){
+				      case 0:
+					        $player->setDisplayName("§f" . $player->getName() . "§f");
+					        $player->setNameTag("§f" . $player->getName() . "§f");
+					        $player->sendMessage("§anickname color has been changed to §fWhite!");
+				      break;
+
+				      case 1:
+					        $player->setDisplayName("§c" . $player->getName() . "§f");
+					        $player->setNameTag("§c" . $player->getName() . "§f");
+					        $player->sendMessage("§aYour nickname color has been changed to §cRed!");
+				      break;
+
+				      case 2:
+					        $player->setDisplayName("§b" . $player->getName() . "§f");
+					        $player->setNameTag("§b" . $player->getName() . "§f");
+					        $player->sendMessage("§aYour nickname color has been changed to §bBlue!");
+				      break;
+
+				      case 3:
+					        $player->setDisplayName("§e" . $player->getName() . "§f");
+					        $player->setNameTag("§e" . $player->getName() . "§f");
+					        $player->sendMessage("§aYour nickname color has been changed to §eYellow!");
+				      break;
+
+				      case 4:
+					        $player->setDisplayName("§6" . $player->getName() . "§f");
+					        $player->setNameTag("§6" . $player->getName() . "§f");
+					        $player->sendMessage("§aYour nickname color has been changed to §6Orange!");
+				      break;
+
+				      case 5:
+					        $player->setDisplayName("§d" . $player->getName() . "§f");
+					         $player->setNameTag("§d" . $player->getName() . "§f");
+					         $player->sendMessage("§aYour nickname color has been changed to §dPurple!");
+				      break;
+           
+              case 6:
+					         $player->setDisplayName("§0" . $player->getName() . "§f");
+					         $player->setNameTag("§0" . $player->getName() . "§f");
+					         $player->sendMessage("§aYour nickname color has been changed to §0Black!");
+              break;
+			      }
+		     return true;
+      });
+		  $form->setTitle("§bNicknameColors");
+		  $form->setContent("§fSelect your color you prefer to your nickname!");
+		  $form->addButton("White");
+		  $form->addButton("§cRed");
+		  $form->addButton("§bBlue");
+		  $form->addButton("§eYellow");
+		  $form->addButton("§6Orange");
+		  $form->addButton("§dPurple");
+                  $form->addButton("§0Black");
+		  $form->sendToPlayer($player);
+		  return $form;
+  }
 }
  
