@@ -15,7 +15,6 @@ use LDFx\ItsToxicGG\LDForm\Form;
 class SettingsCommand extends Command implements PluginOwned{
     
     private $form;
-    public $author = 'ItsToxicGG';
 
     public function __construct(Form $form){
         $this->form = $form;
