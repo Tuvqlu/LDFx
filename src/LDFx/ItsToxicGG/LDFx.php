@@ -41,12 +41,18 @@ class LDFx extends PluginBase
                 case 1:
                     $player->sendMessage("§aYou Have Left The Form!");
                 break;
+			    
+		case 2:
+	            $this->NickColorForm($player);
+	            $player->sendMessage("§aYou Have Left the Settings to NickColorForm!");
+	        break;
             
             }
        });
        $form->setTitle("§bSettings");
        $form->setContent("§fPick THe Setting!");
        $form->addButton("§aFly§cSettings");
+       $form->addButton("§bNicknameColors");
        $form->addButton("§cEXIT");
        $form->sendToPlayer($player);
        return $form;
