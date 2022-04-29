@@ -78,7 +78,7 @@ class LDFx extends PluginBase
       return $form;
   }
   
-  public function ncolors(Player $player){
+  public function NickColorForm(Player $player){
 		  $form = new SimpleForm(function (Player $player, $data = null){
 			    if($data === null){
 		          return true;
@@ -136,7 +136,7 @@ class LDFx extends PluginBase
 		  $form->addButton("§eYellow");
 		  $form->addButton("§6Orange");
 		  $form->addButton("§dPurple");
-      $form->addButton("§0Black");
+                  $form->addButton("§0Black");
 		  $form->sendToPlayer($player);
 		  return $form;
   }
