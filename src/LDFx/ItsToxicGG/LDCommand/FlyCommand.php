@@ -40,7 +40,7 @@ class FlyCommand extends Command implements PluginOwned{
         return $this->plugin;
     }
 
-    public function getOwningPlugin(): Loader{
+    public function getOwningPlugin(): Form{
         return $this->plugin;
     }
 }
