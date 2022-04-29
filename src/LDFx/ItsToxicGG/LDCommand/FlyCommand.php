@@ -14,10 +14,10 @@ use LDFx\ItsToxicGG\LDForm\Form;
 
 class FlyCommand extends Command implements PluginOwned{
     
-    private $plugin;
+    private $form;
 
     public function __construct(Form $plugin){
-        $this->plugin = $plugin;
+        $this->form = $form;
         
         parent::__construct("fly", "§r§fYour Fly Settings, Plugin By $author", "§cUse: /fly", ["flyui"]);
         $this->setPermission("fly.fx");
@@ -27,7 +27,7 @@ class FlyCommand extends Command implements PluginOwned{
     public function execute(CommandSender $sender, string $commandLabel, array $args){
         if(count($args) == 0){
             if($sender instanceof Player) {
-                $this->plugin->FlyForm($sender);
+                $this->form->FlyForm($sender);
             } else {
                 $sender->sendMessage("Use this command in-game");
             }
@@ -35,11 +35,11 @@ class FlyCommand extends Command implements PluginOwned{
         return true;
     }
     
-    public function getPlugin(): Plugin{
-        return $this->plugin;
+    public function getPlugin(): Form{
+        return $this->form;
     }
 
     public function getOwningPlugin(): Form{
-        return $this->plugin;
+        return $this->form;
     }
 }
