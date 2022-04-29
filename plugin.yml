@@ -3,3 +3,8 @@ version: 1.1
 main: LDFx\ItsToxicGG\LDFx
 author: ItsToxicGG
 api: 4.0.0
+
+permissions:
+  settings.fx:
+    description: /settings 
+    default: op
