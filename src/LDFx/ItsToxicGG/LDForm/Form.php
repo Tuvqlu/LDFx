@@ -34,7 +34,7 @@ class Form extends Form{
   }
   
   public function FlyForm($player){
-    $form = new CustomForm(function(Player $player, int $data = null){
+    $form = new CustomForm(function(Player $player, $data){
         if($data === null){
             return true;
         }
@@ -53,8 +53,8 @@ class Form extends Form{
         }
     });
     $form->setTitle("§aFly§cSettings");
-    $form->setContent("§fChoose if you want fly to be off or on");
-    $form->setToggle("§fFly" false);
+    $form->setLabel("§fChoose if you want fly to be off or on");
+    $form->setToggle("§fFly", false);
     $form->sendToPlayer($player);
     return $form;
   }
