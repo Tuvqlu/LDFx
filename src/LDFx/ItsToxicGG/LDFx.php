@@ -46,8 +46,8 @@ class LDFx extends PluginBase
        });
        $form->setTitle("§bSettings");
        $form->setContent("§fPick THe Setting!");
-       $form->setButton("§aFly§cSettings");
-       $form->setButton("§cEXIT");
+       $form->addButton("§aFly§cSettings");
+       $form->addButton("§cEXIT");
        $form->sendToPlayer($player);
        return $form;
   }
@@ -72,8 +72,8 @@ class LDFx extends PluginBase
            }
       });
       $form->setTitle("§aFly§cSettings");
-      $form->setLabel("§fChoose if you want fly to be off or on");
-      $form->setToggle("§fFly", false);
+      $form->addLabel("§fChoose if you want fly to be off or on");
+      $form->addToggle("§fFly", false);
       $form->sendToPlayer($player);
       return $form;
   }
