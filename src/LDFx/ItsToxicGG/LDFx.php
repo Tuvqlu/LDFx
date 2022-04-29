@@ -18,13 +18,13 @@ class LDFx extends PluginBase
 {
   
   public function onEnable(): void{
-      $this->getLogger()->info("Enabled Plugin");
+      $this->getLogger()->info("§aEnabled LDFx");
       $this->getServer()->getCommandMap()->register("settings", new SettingsCommand($this));
       $this->getServer()->getCommandMap()->register("fly", new FlyCommand($this));
   }
   
   public function onDiable(): void{
-      $this->getLogger()->info("Disabled Plugin");
+      $this->getLogger()->info("§cDisabled LDFx");
   }
   
   public function SettingsForm($player){
