@@ -15,7 +15,6 @@ use LDFx\ItsToxicGG\LDForm\Form;
 class FlyCommand extends Command implements PluginOwned{
     
     private $plugin;
-    public $author = 'ItsToxicGG';
 
     public function __construct(Form $plugin){
         $this->plugin = $plugin;
