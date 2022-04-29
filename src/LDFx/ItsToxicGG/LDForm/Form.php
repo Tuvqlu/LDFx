@@ -6,7 +6,8 @@ use pocketmine\player\Player;
 use Vecnavium\FormsUI\SimpleForm;
 use Vecnavium\FormsUI\CustomForm;
 
-class Form extends Form{
+class Form
+{
   
   public function SettingsForm($player){
     $form = new SimpleForm(function(Player $player, int $data = null){
