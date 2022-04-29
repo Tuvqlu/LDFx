@@ -11,6 +11,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\plugin\PluginOwned;
 
 use LDFx\ItsToxicGG\LDForm\Form;
+use LDFx\ItsToxicGG\LDFx;
 
 class SettingsCommand extends Command implements PluginOwned{
     
@@ -40,7 +41,7 @@ class SettingsCommand extends Command implements PluginOwned{
         return $this->plugin;
     }
 
-    public function getOwningPlugin(): Loader{
+    public function getOwningPlugin(): LDFx{
         return $this->plugin;
     }
 }
