@@ -158,5 +158,34 @@ class LDFx extends PluginBase implements Listener
 		  $form->sendToPlayer($player);
 		  return $form;
   }
+  
+  private function FlyMWCheck(Entity $entity) : bool{
+        if(!$entity instanceof Player) return false;
+	if($this->getConfig()->get("FLY-MW") === "on"){
+		if(!in_array($entity->getWorld()->getDisplayName(), $this->getConfig()->get("Worlds"))){
+			$entity->sendMessage("This world does not allow flight!");
+			if(!$entity->isCreative()){
+				$entity->setFlying(false);
+				$entity->setAllowFlight(false);
+			}
+			return false;
+		}
+	}elseif($this->getConfig()->get("FLY-MW") === "off") return true;
+	return true;
+}
+
+  public function onJoin(PlayerJoinEvent $event) : void{
+	$player = $event->getPlayer();
+	if($this->getConfig()->get("JFlyReset") === true){
+		if($player->isCreative()) return;
+		$player->setAllowFlight(false);
+		$player->sendMessage($this->getConfig()->get("FDMessage"));
+	}
+  }
+
+  public function onLevelChange(EntityTeleportEvent $event) : void{
+	$entity = $event->getEntity();
+	if($entity instanceof Player) $this->FlyMWCheck($entity);
+  }
 }
  
