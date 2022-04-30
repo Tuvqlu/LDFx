@@ -8,7 +8,6 @@ use LDFx\ItsToxicGG\LDCommand\FlyCommand;
 use LDFx\ItsToxicGG\LDCommand\NickColorCommand;
 // POCKETMINE
 use pocketmine\plugin\PluginBase;
-use pocketmine\player\Player;
 use pocketmine\Server;
 use pocketmine\entity\Entity;
 use pocketmine\event\entity\EntityTeleportEvent;
