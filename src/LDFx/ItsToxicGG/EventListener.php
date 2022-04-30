@@ -9,6 +9,7 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\player\Player;
 use LDFx\ItsToxicGG\LDFx;
 
 class EventListener implements Listener{
@@ -17,7 +18,7 @@ class EventListener implements Listener{
 		if(!$entity instanceof Player) return false;
 		if($this->getConfig()->get("FLY-MW") === "on"){
 			if(!in_array($entity->getWorld()->getDisplayName(), $this->getConfig()->get("Worlds"))){
-				$entity->sendMessage(self::PREFIX . TextFormat::RED . "This world does not allow flight!");
+				$entity->sendMessage("This world does not allow flight!");
 				if(!$entity->isCreative()){
 					$entity->setFlying(false);
 					$entity->setAllowFlight(false);
