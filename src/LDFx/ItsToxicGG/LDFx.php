@@ -6,16 +6,23 @@ namespace LDFx\ItsToxicGG;
 use LDFx\ItsToxicGG\LDCommand\SettingsCommand;
 use LDFx\ItsToxicGG\LDCommand\FlyCommand;
 use LDFx\ItsToxicGG\LDCommand\NickColorCommand;
-use LDFx\ItsToxicGG\EventListener;
 // POCKETMINE
 use pocketmine\plugin\PluginBase;
 use pocketmine\player\Player;
 use pocketmine\Server;
+use pocketmine\entity\Entity;
+use pocketmine\event\entity\EntityTeleportEvent;
+use pocketmine\event\entity\EntityDamageEvent;
+use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\event\Listener;
+use pocketmine\utils\TextFormat;
+use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\player\Player;
 // FORM
 use Vecnavium\FormsUI\CustomForm;
 use Vecnavium\FormsUI\SimpleForm;
 
-class LDFx extends PluginBase
+class LDFx extends PluginBase implements Listener
 {
   
   public function onEnable(): void{
