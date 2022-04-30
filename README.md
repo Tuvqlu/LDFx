@@ -10,11 +10,11 @@ Ive tested myself and the commands + permissions are working good!
 - [X] Commands Support
 - [X] Permissions Support
 - [X] FormAPI Support
-- [ ] Pay-Pal Link
+- [X] Pay-Pal Link
 # Support
 Donate to me by sending money to my paypal:
 
-- Link is coming soon!
+- https://www.paypal.com/paypalme/itstoxicgg
 Goal: 0/10 dollars
 
 If we reach the goal I will add epic new features!
