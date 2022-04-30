@@ -60,5 +60,3 @@ class EventListener implements Listener{
 		}
 	}
 }
-	
-}

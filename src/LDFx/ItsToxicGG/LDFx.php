@@ -5,6 +5,7 @@ namespace LDFx\ItsToxicGG;
 // LDFX
 use LDFx\ItsToxicGG\LDCommand\SettingsCommand;
 use LDFx\ItsToxicGG\LDCommand\FlyCommand;
+use LDFx\ItsToxicGG\LDCommand\NickColorCommand;
 use LDFx\ItsToxicGG\EventListener;
 // POCKETMINE
 use pocketmine\plugin\PluginBase;
@@ -24,6 +25,7 @@ class LDFx extends PluginBase
       $this->saveDefaultConfig();
       $this->getServer()->getCommandMap()->register("settings", new SettingsCommand($this));
       $this->getServer()->getCommandMap()->register("fly", new FlyCommand($this));
+      $this->getServer()->getCommandMap()->register("nickcolor", new NickColorCommand($this));
   }
   
   public function onDiable(): void{
@@ -44,12 +46,18 @@ class LDFx extends PluginBase
                 case 1:
                     $player->sendMessage("§aYou Have Left The Form!");
                 break;
+			    
+		case 2:
+	            $this->NickColorForm($player);
+	            $player->sendMessage("§aYou Have Left the Settings to NickColorForm!");
+	        break;
             
             }
        });
        $form->setTitle("§bSettings");
        $form->setContent("§fPick THe Setting!");
        $form->addButton("§aFly§cSettings");
+       $form->addButton("§bNicknameColors");
        $form->addButton("§cEXIT");
        $form->sendToPlayer($player);
        return $form;
