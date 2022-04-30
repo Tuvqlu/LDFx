@@ -12,6 +12,7 @@ Ive tested myself and the commands + permissions are working good!
 - [X] Permissions Support
 - [X] FormAPI Support
 - [X] Pay-Pal Link
+- [ ] DataBase (for a feature)
 - Note : I will add much more features! 1 donation = 1 - 3 new features that will be added asking by the donation (not everything from a donater will be added!)
 # Support
 Donate to me by sending money to my paypal:
