@@ -3,18 +3,21 @@ LDFx is the ultimate essentials plugin for PM4!
 # Does it work?
 Ive tested myself and the commands + permissions are working good!
 # Todo & Implemented
-- [X] NickName Support
+- [ ] NickName Support (After Chat-Color)
+- [X] NickName Color Support
 - [X] Fly-Support
-- [ ] Chat-Color Support
-- [ ] LevelSystem Support
+- [ ] Chat-Color Support (After LevelSystem)
+- [ ] LevelSystem Support (Next To Be Implement, just need a donation.)
 - [X] Commands Support
 - [X] Permissions Support
 - [X] FormAPI Support
-- [ ] Pay-Pal Link
+- [X] Pay-Pal Link
+- [ ] DataBase (for a feature)
+- Note : I will add much more features! 1 donation = 1 - 3 new features that will be added asking by the donation (not everything from a donater will be added!)
 # Support
 Donate to me by sending money to my paypal:
 
-- Link is coming soon!
+- https://www.paypal.com/paypalme/itstoxicgg
 Goal: 0/10 dollars
 
 If we reach the goal I will add epic new features!
