@@ -19,6 +19,9 @@ class LDFx extends PluginBase
   
   public function onEnable(): void{
       $this->getLogger()->info("§aEnabled LDFx");
+      $this->getServer()->getPluginManager()->registerEvents($this, $this);
+      @mkdir($this->getDataFolder());
+      $this->saveDefaultConfig();
       $this->getServer()->getCommandMap()->register("settings", new SettingsCommand($this));
       $this->getServer()->getCommandMap()->register("fly", new FlyCommand($this));
   }
