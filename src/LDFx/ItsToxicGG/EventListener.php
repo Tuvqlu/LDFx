@@ -42,21 +42,4 @@ class EventListener implements Listener{
 		if($entity instanceof Player) $this->FlyMWCheck($entity);
 	}
 	
-	public function onDamage(EntityDamageEvent $event) : void{
-		$entity = $event->getEntity();
-		if($this->getConfig()->get("DFlyReset") === true){
-			if($event instanceof EntityDamageByEntityEvent){
-				if($entity instanceof Player){
-					$damager = $event->getDamager();
-					if(!$damager instanceof Player) return;
-					if($damager->isCreative()) return;
-					if($damager->getAllowFlight() === true){
-						$damager->sendMessage(self::PREFIX . TextFormat::DARK_RED . "Flight mode disabled due to combat");
-						$damager->setAllowFlight(false);
-						$damager->setFlying(false);
-					}
-				}
-			}
-		}
-	}
 }
