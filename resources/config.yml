@@ -14,5 +14,16 @@
   worlds:
   - "world"
 # EndOfFlyConfig
-# More config soon!
+# LobbyCore-Config
+  #Items 1 | Compass
+  item1-name: "§r§cReport Player" # Name Items
+  item1-cmd: "report" # Your Commands
+
+  #Items 2 | Name Tag
+  item2-name: "§r§aTeleporter" # Name Items
+  item2-cmd: "gui" # Your Commands
+
+  #Items 4 | Enchanted Book
+  item3-name: "§r§dSocial Menu §7[Use]" # Name Items
+  item3-cmd: "settings" # Your Commands
 ...
