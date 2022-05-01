@@ -13,6 +13,7 @@ use pocketmine\entity\Entity;
 use pocketmine\event\entity\EntityTeleportEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\event\entity\EntityDamageByChildEntityEvent;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\player\PlayerJoinEvent;
@@ -191,16 +192,12 @@ class LDFx extends PluginBase implements Listener
 	if($entity instanceof Player) $this->FlyMWCheck($entity);
   }
  	
-  public function onDamage(EntityDamageEvent $event) {
-       $player = $event->getEntity();
-       if (!$player instanceof Player) return;
-       switch ($event->getCause()) {
-           case EntityDamageEvent::CAUSE_ENTITY_ATTACK:
-               $damager = $event->getDamager();
-                   $event->setKnockBack("5");
-                   $event->setAttackCooldown("10");
-               break;
-       }
+  public function onEntityDamageEventByEntity(EntityDamageByEntityEvent $event): void{
+	$damager = $event->getDamager();
+	if(!$event instanceof EntityDamageByChildEntityEvent and $damager instanceof Living and $damager->isSprinting()){
+		$event->setKnockback(1.9*$event->getKnockback());
+		$damager->setSprinting(false);
+	}
   }
 
   public function BetterPearl(){
