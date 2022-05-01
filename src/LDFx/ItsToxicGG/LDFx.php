@@ -36,11 +36,11 @@ class LDFx extends PluginBase implements Listener
       $this->getServer()->getCommandMap()->register("fly", new FlyCommand($this));
       $this->getServer()->getCommandMap()->register("nickcolor", new NickColorCommand($this));
       $this->getServer()->getPluginManager()->registerEvent(ProjectileHitEvent::class, static function (ProjectileHitEvent $event) : void{
-      $projectile = $event->getEntity();
-      $entity = $projectile->getOwningEntity();
+            $projectile = $event->getEntity();
+            $entity = $projectile->getOwningEntity();
             if ($projectile instanceof EnderPearl and $entity instanceof Player) {
                 $vector = $event->getRayTraceResult()->getHitVector();
-                (function() use($vector) : void{ //HACK : Closure bind hack to access inaccessible members
+                (function() use($vector) : void{
                     $this->setPosition($vector);
                 })->call($entity);
                 $location = $entity->getLocation();
