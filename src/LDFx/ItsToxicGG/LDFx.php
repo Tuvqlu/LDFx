@@ -7,6 +7,7 @@ use LDFx\ItsToxicGG\LDCommand\SettingsCommand;
 use LDFx\ItsToxicGG\LDCommand\FlyCommand;
 use LDFx\ItsToxicGG\LDCommand\NickColorCommand;
 use LDFx\ItsToxicGG\LDCommand\GUICommand;
+use LDFx\ItsToxicGG\LDCommand\SocialMenuCommand;
 // POCKETMINE
 use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
@@ -51,6 +52,7 @@ class LDFx extends PluginBase implements Listener
       $this->getServer()->getCommandMap()->register("fly", new FlyCommand($this));
       $this->getServer()->getCommandMap()->register("nickcolor", new NickColorCommand($this));
       $this->getServer()->getCommandMap()->register("games", new GUICommand($this));
+      $this->getServer()->getCommandMap()->register("socialmenu", new SocialMenuCommand($this));
   }
   
   public function onDiable(): void{
