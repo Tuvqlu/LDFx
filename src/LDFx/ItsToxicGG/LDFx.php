@@ -269,7 +269,7 @@ class LDFx extends PluginBase implements Listener
         $item3->setCustomName($this->getConfig()->get("item3-name"));
         $player->getInventory()->setItem(0, $item1);
         $player->getInventory()->setItem(4, $item2);
-        $player->getInventory()->setItem(8, $item3);]	  
+        $player->getInventory()->setItem(8, $item3);	  
   }
 	
   public function onClick(PlayerInteractEvent $event){
