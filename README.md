@@ -13,7 +13,7 @@ Ive tested myself and the commands + permissions are working good!
 - [X] FormAPI Support
 - [X] Pay-Pal Link
 - [X] CustomKnockBack
-- [ ] LobbyCore
+- [X] LobbyCore
 - [ ] HealthTag
 - [ ] DataBase
 - [X] BetterPearl
