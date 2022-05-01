@@ -26,4 +26,15 @@
   #Items 4 | Enchanted Book
   item3-name: "§r§dSocial Menu §7[Use]" # Name Items
   item3-cmd: "settings" # Your Commands
+# EndOfLobbyCore-Config
+# GameUI-Config
+  #GameUI-1
+  GameUi-1: "thebridge random"
+  
+  #GameUI-2
+  GameUi-2: "bedwars random"
+  
+  #GameUI-3
+  GameUi-3: "skywars random"
+# EndOfGameUI-Config
 ...

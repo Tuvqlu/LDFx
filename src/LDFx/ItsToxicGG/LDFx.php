@@ -174,6 +174,67 @@ class LDFx extends PluginBase implements Listener
 		  $form->sendToPlayer($player);
 		  return $form;
   }
+	
+  public function GUI($player){
+       $form = new SimpleForm(function(Player $player, int $data = null){
+            if($data === null){
+                return true;
+            }
+            switch($data){
+                case 0:
+                    $this->getServer()->getCommandMap()->dispatch($player, $this->getConfig()->get("GameUi-1"));
+                break;
+            
+                case 1:
+                    $this->getServer()->getCommandMap()->dispatch($player, $this->getConfig()->get("GameUi-2"));
+                break;
+			    
+		case 2:
+                    $this->getServer()->getCommandMap()->dispatch($player, $this->getConfig()->get("GameUi-3"));
+	        break;
+			    
+		case 3:
+		    $player->sendMessage("§aClosed Teleporter Form!");
+	        break;
+            }
+       });
+       $form->setTitle("§bSettings");
+       $form->setContent("§fChoose the minigame you wanna play!");
+       $form->addButton("§9The§cBridge");
+       $form->addButton("§aBed§eWars");
+       $form->addButton("§aSky§7Wars");
+       $form->addButton("§cEXIT");
+       $form->sendToPlayer($player);
+       return $form;
+  }
+	
+  public function SocialMenuForm($player){
+       $form = new SimpleForm(function(Player $player, int $data = null){
+            if($data === null){
+                return true;
+            }
+            switch($data){
+                case 0:
+                    $this->getServer()->getCommandMap()->dispatch($player, "party");
+                break;
+            
+                case 1:
+                    $this->getServer()->getCommandMap()->dispatch($player, "settings");
+                break;
+			        
+		case 2:
+		    $player->sendMessage("§aClosed Teleporter Form!");
+	        break;
+            }
+       });
+       $form->setTitle("§dSocial Menu");
+       $form->setContent("§fChoose the minigame you wanna play!");
+       $form->addButton("§9Paties");
+       $form->addButton("§aSettings");
+       $form->addButton("§cEXIT");
+       $form->sendToPlayer($player);
+       return $form;
+  }
   
   private function FlyMWCheck(Entity $entity) : bool{
         if(!$entity instanceof Player) return false;
@@ -188,7 +249,7 @@ class LDFx extends PluginBase implements Listener
 		}
 	}elseif($this->getConfig()->get("FLY-MW") === "off") return true;
 	return true;
-}
+  }
 
   public function onJoin(PlayerJoinEvent $event) : void{
 	$player = $event->getPlayer();
@@ -197,23 +258,18 @@ class LDFx extends PluginBase implements Listener
 		$player->setAllowFlight(false);
 		$player->sendMessage($this->getConfig()->get("FDMessage"));
 	}
-  }
-	
-  public function LobbyCoreJoin(PlayerJoinEvent $event): void{
+	  
         $player = $event->getPlayer();
         $player->getInventory()->clearAll();
-        $item1 = ItemFactory::getInstance()->get(345, 0, 1);
-        $item2 = ItemFactory::getInstance()->get(450, 0, 1);
+        $item1 = ItemFactory::getInstance()->get(450, 0, 1);
+        $item2 = ItemFactory::getInstance()->get(345, 0, 1);
         $item3 = ItemFactory::getInstance()->get(421, 0, 1);
-        $item4 = ItemFactory::getInstance()->get(403, 0, 1);
         $item1->setCustomName($this->getConfig()->get("item1-name"));
         $item2->setCustomName($this->getConfig()->get("item2-name"));
         $item3->setCustomName($this->getConfig()->get("item3-name"));
-        $item4->setCustomName($this->getConfig()->get("item4-name"));
         $player->getInventory()->setItem(0, $item1);
-        $player->getInventory()->setItem(6, $item2);
-        $player->getInventory()->setItem(7, $item3);
-        $player->getInventory()->setItem(8, $item4);]
+        $player->getInventory()->setItem(4, $item2);
+        $player->getInventory()->setItem(8, $item3);	  
   }
 	
   public function onClick(PlayerInteractEvent $event){
@@ -227,9 +283,6 @@ class LDFx extends PluginBase implements Listener
         }
         if($itn == $this->getConfig()->get("item3-name")){
             $this->getServer()->getCommandMap()->dispatch($player, $this->getConfig()->get("item3-cmd"));
-        }
-        if($itn == $this->getConfig()->get("item4-name")){
-            $this->getServer()->getCommandMap()->dispatch($player, $this->getConfig()->get("item4-cmd"));
         }
  }
 
