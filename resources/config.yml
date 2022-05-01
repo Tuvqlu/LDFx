@@ -25,7 +25,7 @@
 
   #Items 4 | Enchanted Book
   item3-name: "§r§dSocial Menu §7[Use]" # Name Items
-  item3-cmd: "settings" # Your Commands
+  item3-cmd: "socialmenu" # Your Commands
 # EndOfLobbyCore-Config
 # GameUI-Config
   #GameUI-1
