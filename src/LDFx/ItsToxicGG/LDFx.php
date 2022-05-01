@@ -30,13 +30,25 @@ class LDFx extends PluginBase implements Listener
   public function onEnable(): void{
       $this->getLogger()->info("§aEnabled LDFx");
       $this->getServer()->getPluginManager()->registerEvents($this, $this);
-      $this->getServer()->getPluginManager()->registerEvent(ProjectileHitEvent::class, static function (ProjectileHitEvent $event) : void{
-      $this->BetterEnderPearl();
       @mkdir($this->getDataFolder());
       $this->saveDefaultConfig();
       $this->getServer()->getCommandMap()->register("settings", new SettingsCommand($this));
       $this->getServer()->getCommandMap()->register("fly", new FlyCommand($this));
       $this->getServer()->getCommandMap()->register("nickcolor", new NickColorCommand($this));
+      $this->getServer()->getPluginManager()->registerEvent(ProjectileHitEvent::class, static function (ProjectileHitEvent $event) : void{
+      $projectile = $event->getEntity();
+      $entity = $projectile->getOwningEntity();
+            if ($projectile instanceof EnderPearl and $entity instanceof Player) {
+                $vector = $event->getRayTraceResult()->getHitVector();
+                (function() use($vector) : void{ //HACK : Closure bind hack to access inaccessible members
+                    $this->setPosition($vector);
+                })->call($entity);
+                $location = $entity->getLocation();
+                $entity->getNetworkSession()->syncMovement($location, $location->yaw, $location->pitch);
+                $projectile->setOwningEntity(null);
+            }
+        }, EventPriority::NORMAL, $this);
+    }
   }
   
   public function onDiable(): void{
@@ -202,21 +214,6 @@ class LDFx extends PluginBase implements Listener
                    $event->setAttackCooldown("10");
                break;
        }
-   }
-
-   public function BetterEnderPearl(): void{
-       $projectile = $event->getEntity();
-       $entity = $projectile->getOwningEntity();
-            if ($projectile instanceof EnderPearl and $entity instanceof Player) {
-                $vector = $event->getRayTraceResult()->getHitVector();
-                (function() use($vector) : void{ //HACK : Closure bind hack to access inaccessible members
-                    $this->setPosition($vector);
-                })->call($entity);
-                $location = $entity->getLocation();
-                $entity->getNetworkSession()->syncMovement($location, $location->yaw, $location->pitch);
-                $projectile->setOwningEntity(null);
-            }
-        }, EventPriority::NORMAL, $this);
-    }
+  }
 }   
  
