@@ -194,7 +194,7 @@ class LDFx extends PluginBase implements Listener
 	        break;
 			    
 		case 3:
-		    $this->sendMessage("§aClosed Teleporter Form!");
+		    $player->sendMessage("§aClosed Teleporter Form!");
 	        break;
             }
        });
@@ -223,7 +223,7 @@ class LDFx extends PluginBase implements Listener
                 break;
 			        
 		case 2:
-		    $this->sendMessage("§aClosed Teleporter Form!");
+		    $player->sendMessage("§aClosed Teleporter Form!");
 	        break;
             }
        });
