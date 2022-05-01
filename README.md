@@ -12,11 +12,11 @@ Ive tested myself and the commands + permissions are working good!
 - [X] Permissions Support
 - [X] FormAPI Support
 - [X] Pay-Pal Link
-- [X] CustomKnockBack (COMPELETE 1.4)
-- [ ] LobbyCore (WAITING 1.4)
+- [X] CustomKnockBack
+- [ ] LobbyCore
 - [ ] HealthTag
 - [ ] DataBase
-- [ ] BetterPearl
+- [X] BetterPearl
 - [ ] FriendSystem
 - [ ] PartySystem
 - [ ] ReportSystem
