@@ -3,7 +3,7 @@ build-by-default: true
 branches:
 - main
 projects:
-  LDFx:
+  God Toxi:
     path: ""
     libs:
       - src: Vecnavium/FormsUI/FormsUI
