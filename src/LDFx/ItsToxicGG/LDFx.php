@@ -71,12 +71,12 @@ class LDFx extends PluginBase implements Listener
                 break;
             
                 case 1:
-                    $player->sendMessage("§aYou Have Left The Form!");
+	            $this->NickColorForm($player);
+	            $player->sendMessage("§aYou Have Left the Settings to NickColorForm!");
                 break;
 			    
 		case 2:
-	            $this->NickColorForm($player);
-	            $player->sendMessage("§aYou Have Left the Settings to NickColorForm!");
+	            $player->sendMessage("§aYou Have Left the Form!");
 	        break;
             
             }
