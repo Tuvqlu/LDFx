@@ -12,7 +12,7 @@ use pocketmine\plugin\PluginOwned;
 
 use LDFx\ItsToxicGG\LDFx;
 
-class FlyCommand extends Command implements PluginOwned{
+class SocialMenuCommand extends Command implements PluginOwned{
     
     private $plugin;
 
