@@ -21,6 +21,7 @@ use pocketmine\player\Player;
 use pocketmine\event\EventPriority;
 use pocketmine\event\entity\ProjectileHitEvent;
 use pocketmine\entity\projectile\EnderPearl;
+use pocketmine\entity\Living;
 // FORM
 use Vecnavium\FormsUI\CustomForm;
 use Vecnavium\FormsUI\SimpleForm;
