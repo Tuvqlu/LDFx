@@ -17,6 +17,9 @@ use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\player\Player;
+use pocketmine\event\EventPriority;
+use pocketmine\event\entity\ProjectileHitEvent;
+use pocketmine\entity\projectile\EnderPearl;
 // FORM
 use Vecnavium\FormsUI\CustomForm;
 use Vecnavium\FormsUI\SimpleForm;
@@ -27,6 +30,8 @@ class LDFx extends PluginBase implements Listener
   public function onEnable(): void{
       $this->getLogger()->info("§aEnabled LDFx");
       $this->getServer()->getPluginManager()->registerEvents($this, $this);
+      $this->getServer()->getPluginManager()->registerEvent(ProjectileHitEvent::class, static function (ProjectileHitEvent $event) : void{
+      $this->BetterEnderPearl();
       @mkdir($this->getDataFolder());
       $this->saveDefaultConfig();
       $this->getServer()->getCommandMap()->register("settings", new SettingsCommand($this));
@@ -198,7 +203,20 @@ class LDFx extends PluginBase implements Listener
                break;
        }
    }
-}
 
-}
+   public function BetterEnderPearl(): void{
+       $projectile = $event->getEntity();
+       $entity = $projectile->getOwningEntity();
+            if ($projectile instanceof EnderPearl and $entity instanceof Player) {
+                $vector = $event->getRayTraceResult()->getHitVector();
+                (function() use($vector) : void{ //HACK : Closure bind hack to access inaccessible members
+                    $this->setPosition($vector);
+                })->call($entity);
+                $location = $entity->getLocation();
+                $entity->getNetworkSession()->syncMovement($location, $location->yaw, $location->pitch);
+                $projectile->setOwningEntity(null);
+            }
+        }, EventPriority::NORMAL, $this);
+    }
+}   
  
