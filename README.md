@@ -3,16 +3,23 @@ LDFx is the ultimate essentials plugin for PM4!
 # Does it work?
 Ive tested myself and the commands + permissions are working good!
 # Todo & Implemented
-- [ ] NickName Support (After Chat-Color)
+- [ ] NickName Support
 - [X] NickName Color Support
 - [X] Fly-Support
-- [ ] Chat-Color Support (After LevelSystem)
-- [ ] LevelSystem Support (Next To Be Implement, just need a donation.)
+- [ ] Chat-Color Support
+- [ ] LevelSystem Support
 - [X] Commands Support
 - [X] Permissions Support
 - [X] FormAPI Support
 - [X] Pay-Pal Link
-- [ ] DataBase (for a feature)
+- [X] CustomKnockBack
+- [ ] LobbyCore
+- [ ] HealthTag
+- [ ] DataBase
+- [X] BetterPearl
+- [ ] FriendSystem
+- [ ] PartySystem
+- [ ] ReportSystem
 - Note : I will add much more features! 1 donation = 1 - 3 new features that will be added asking by the donation (not everything from a donater will be added!)
 # Support
 Donate to me by sending money to my paypal:

@@ -13,10 +13,15 @@ use pocketmine\entity\Entity;
 use pocketmine\event\entity\EntityTeleportEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
+use pocketmine\event\entity\EntityDamageByChildEntityEvent;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\player\Player;
+use pocketmine\event\EventPriority;
+use pocketmine\event\entity\ProjectileHitEvent;
+use pocketmine\entity\projectile\EnderPearl;
+use pocketmine\entity\Living;
 // FORM
 use Vecnavium\FormsUI\CustomForm;
 use Vecnavium\FormsUI\SimpleForm;
@@ -27,6 +32,7 @@ class LDFx extends PluginBase implements Listener
   public function onEnable(): void{
       $this->getLogger()->info("§aEnabled LDFx");
       $this->getServer()->getPluginManager()->registerEvents($this, $this);
+      $this->BetterPearl();
       @mkdir($this->getDataFolder());
       $this->saveDefaultConfig();
       $this->getServer()->getCommandMap()->register("settings", new SettingsCommand($this));
@@ -186,5 +192,29 @@ class LDFx extends PluginBase implements Listener
 	$entity = $event->getEntity();
 	if($entity instanceof Player) $this->FlyMWCheck($entity);
   }
-}
+ 	
+  public function onEntityDamageEventByEntity(EntityDamageByEntityEvent $event): void{
+	$damager = $event->getDamager();
+	if(!$event instanceof EntityDamageByChildEntityEvent and $damager instanceof Living and $damager->isSprinting()){
+		$event->setKnockback(1.9*$event->getKnockback());
+		$damager->setSprinting(false);
+	}
+  }
+
+  public function BetterPearl(){
+       $this->getServer()->getPluginManager()->registerEvent(ProjectileHitEvent::class, static function (ProjectileHitEvent $event) : void{
+           $projectile = $event->getEntity();
+           $entity = $projectile->getOwningEntity();
+           if ($projectile instanceof EnderPearl and $entity instanceof Player) {
+               $vector = $event->getRayTraceResult()->getHitVector();
+               (function() use($vector) : void{ //HACK : Closure bind hack to access inaccessible members
+                   $this->setPosition($vector);
+               })->call($entity);
+               $location = $entity->getLocation();
+               $entity->getNetworkSession()->syncMovement($location, $location->yaw, $location->pitch);
+               $projectile->setOwningEntity(null);
+           }
+       }, EventPriority::NORMAL, $this);
+   }
+}        
  
