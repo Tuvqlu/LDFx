@@ -21,6 +21,9 @@ Ive tested myself and the commands + permissions are working good!
 - [ ] PartySystem
 - [ ] ReportSystem
 - Note : I will add much more features! 1 donation = 1 - 3 new features that will be added asking by the donation (not everything from a donater will be added!)
+# Branches:
+PM5 // NOTE: PM5 IS NOT READY AND STILL HAS THE PM4 FILES
+In-Dev // THE BRANCH FOR DEV VERSION LIKE 1.5 WILL BE FIRST IMPLEMENTED IN IN-DEV THEN PULL-REQUEST -> FIX BUGS -> CLEAR PHPSTANS -> PULL THE REQUEST BUTTON
 # Support
 Donate to me by sending money to my paypal:
 
