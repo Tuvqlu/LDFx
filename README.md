@@ -14,7 +14,12 @@ Ive tested myself and the commands + permissions are working good!
 - [X] Pay-Pal Link
 - [X] CustomKnockBack (COMPELETE 1.4)
 - [ ] LobbyCore (WAITING 1.4)
-- [ ] DataBase 
+- [ ] HealthTag
+- [ ] DataBase
+- [ ] BetterPearl
+- [ ] FriendSystem
+- [ ] PartySystem
+- [ ] ReportSystem
 - Note : I will add much more features! 1 donation = 1 - 3 new features that will be added asking by the donation (not everything from a donater will be added!)
 # Support
 Donate to me by sending money to my paypal:
