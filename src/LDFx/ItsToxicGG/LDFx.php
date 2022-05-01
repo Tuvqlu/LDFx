@@ -186,5 +186,19 @@ class LDFx extends PluginBase implements Listener
 	$entity = $event->getEntity();
 	if($entity instanceof Player) $this->FlyMWCheck($entity);
   }
+ 	
+  public function onDamage(EntityDamageEvent $event) {
+       $player = $event->getEntity();
+       if (!$player instanceof Player) return;
+       switch ($event->getCause()) {
+           case EntityDamageEvent::CAUSE_ENTITY_ATTACK:
+               $damager = $event->getDamager();
+                   $event->setKnockBack("5");
+                   $event->setAttackCooldown("10");
+               break;
+       }
+   }
+}
+
 }
  
