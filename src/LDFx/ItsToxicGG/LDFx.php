@@ -215,11 +215,11 @@ class LDFx extends PluginBase implements Listener
             }
             switch($data){
                 case 0:
-                    $this->getServer()->getCommandMap()->dispatch($player, "party"));
+                    $this->getServer()->getCommandMap()->dispatch($player, "party");
                 break;
             
                 case 1:
-                    $this->getServer()->getCommandMap()->dispatch($player, "settings"));
+                    $this->getServer()->getCommandMap()->dispatch($player, "settings");
                 break;
 			        
 		case 2:
