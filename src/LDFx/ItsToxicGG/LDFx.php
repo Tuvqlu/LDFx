@@ -233,7 +233,7 @@ class LDFx extends PluginBase implements Listener
        });
        $form->setTitle("§dSocial Menu");
        $form->setContent("§fChoose the minigame you wanna play!");
-       $form->addButton("§9Paties");
+       $form->addButton("§9Parties");
        $form->addButton("§aSettings");
        $form->addButton("§cEXIT");
        $form->sendToPlayer($player);
